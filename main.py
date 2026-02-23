@@ -37,7 +37,7 @@ class SimpleNN(nn.Module):
 
 model = SimpleNN()
 criterion = nn.MSELoss()
-optimizer = optim.Adam(model.parameters(), lr=0.01,weight_decay=1e-4)
+optimizer = optim.Adam(model.parameters(), lr=0.01,weight_decay=1e-3)
 
 # Checkpoint tracking
 best_val_loss = float('inf')
@@ -49,7 +49,7 @@ epochs = 1000
 train_losses = []
 val_losses = []
 
-patience = 1000               # stop if no improvement for 60 epochs
+patience = 60              # stop if no improvement for 60 epochs
 min_delta = 0.0001          # minimum improvement to count as better
 counter = 0                 # how many epochs since last improvement
 
